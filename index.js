@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 const port = 3000;
 const MODEL_NAME = "gemini-1.0-pro-001";
 const API_KEY = "AIzaSyC4e7uaI2gpQHypSFe_lXwDVwubLAqXibU"; // 제미나이 API 키로 대체
-const prompt = '이 주제에 필요한 준비물 아이디어 작성해줘'; // 당신의 챗봇에 맞게 프롬프트 변경해주세요
+const prompt = ''; // 당신의 챗봇에 맞게 프롬프트 변경해주세요
 
 app.post('/generate', async (req, res) => {  
     try {
@@ -38,7 +38,7 @@ app.post('/generate', async (req, res) => {
             },
         ];
        const parts = [
-            { text: req.body.userInput + prompt } 
+            { text: '너는 사용자가 제공해 주는 제시어(' + req.body.userInput + ')를 가지고 베르나르 베르베르 소설가 느낌으로 반드시 \"이전 이야기\"를 가지고 뒤에 이어질 자연스러운 문맥으로 감동과 재미를 주는 이야기를 100자로 만들어줘.' }
         ];
         const result = await model.generateContent({
             contents: [{ role: "user", parts }],
