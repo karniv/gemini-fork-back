@@ -38,7 +38,7 @@ app.post('/generate', async (req, res) => {
             },
         ];
        const parts = [
-            { text: '너는 사용자가 제공해 주는 제시어(' + req.body.userInput + ')를 가지고 베르나르 베르베르 소설가 느낌으로 반드시 \"이전 이야기\"를 가지고 뒤에 이어질 자연스러운 문맥으로 감동과 재미를 주는 이야기를 100자로 만들어줘.' }
+            { text: '너는 사용자가 제공해 주는 제시어(' + req.body.userInput + ')를 가지고 베르나르 베르베르 소설가 느낌으로 10대들이 재미를 느낄 수 있는 위트있는 말로 50자로 만들어줘.' }
         ];
         const result = await model.generateContent({
             contents: [{ role: "user", parts }],
